@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 
-public class CartTableGateway {
+public class CartGateway {
 
     private static final String TABLE_NAME = "cart";
 
