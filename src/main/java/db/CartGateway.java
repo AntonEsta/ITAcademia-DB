@@ -2,7 +2,9 @@ package db;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class CartGateway {
 
@@ -24,6 +26,17 @@ public class CartGateway {
             return ORM.getInstance().update(TABLE_NAME, valuesMap, "WHERE good_id = " + goodId);
         }
         return ORM.getInstance().insert(TABLE_NAME, valuesMap);
+    }
+
+    public static Good[] getAllGoods() throws SQLException {
+//        var goodIds = ORM.getInstance().select(TABLE_NAME, new String[]{"good_id"},"");
+        var tabFields = new HashMap<String, String[]>();
+        var goodIds = ORM.getInstance().join();
+        List<Good> goods = new ArrayList<>();
+        while (goodIds.next()) {
+            goods.add(GoodGateway.findById(goodIds.getInt("good_id")));
+        }
+
     }
 
 }

@@ -3,6 +3,7 @@ package db;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.SimpleTimeZone;
 
 public class ORM {
     static ORM object;
@@ -12,6 +13,7 @@ public class ORM {
     private ORM() throws SQLException {
         if (connection == null) {
             String url = "jdbc:mysql://" + Config.SERVER + "/" + Config.DB;
+            DriverManager.setLoginTimeout(10);
             connection = DriverManager.getConnection(url, Config.LOGIN, Config.PASSWORD);
             statement = connection.createStatement();
         }
@@ -35,14 +37,7 @@ public class ORM {
         }
         return statement.executeQuery("SELECT " + selectFields + " FROM " + table + " " + where);
     }
-
-//    INSERT INTO table(поля) VALUES(значения...)
-
-    HashMap data = new HashMap();
-
-    //    data.put("title","Товар1");
-//    data.put("price",100)
-//    insert("goods",data)
+    
     public int insert(String table, HashMap<String, String> values) throws SQLException {
         String sql = "INSERT INTO " + table, columns = "", sqlValues = "";
         if (!values.isEmpty()) {
@@ -59,7 +54,6 @@ public class ORM {
         return statement.executeUpdate(sql);
     }
 
-//    UPDATE TABLE SET f=v,f2=v2 where
     public int update(String table, HashMap<String,String> values, String where) throws SQLException {
         String sql = "UPDATE " + table + " SET ";
 //        TABLE SET f=v,f2=v WHERE ... = ...";
@@ -77,7 +71,40 @@ public class ORM {
         return statement.executeUpdate(sql);
     }
 
-//    update(String table,HashMap values,String where){
-//
-//    }
+    public ResultSet join(HashMap<String, String[]> tablesFields, String on, String where) throws SQLException {
+        String sql = "SELECT ";
+        String join = "";
+        for (var table : tablesFields.entrySet()) {
+            var tableName = table.getKey();
+            join += tableName + ",";
+            var fields = table.getValue();
+            for (int i = 0; i < fields.length; i++) {
+                sql = sql.concat(tableName + ".").concat(fields[i]);
+                if (i != fields.length-1) {
+                    sql = sql.concat(", ");
+                }
+            }
+            join = join.substring(0,join.length()-1);
+        }
+        sql += " JOIN " + join + " " + on + " " + where;
+        System.out.println("sql from join: " + sql);
+        return statement.executeQuery(sql);
+    }
+
+
+        for (int i = 0; i < tablesFields.length; i++) {
+            sql.concat(tablesFields[i]);
+            for (int j = 0; j < tablesFields[i].length; j++) {
+                sql.concat(tablesFields[i][j]);
+                if (j != tablesFields[i].length-1) {
+                    sql.concat(", ");
+                }
+            }
+        }
+
+        
+        
+//        + "" + on ;
+    } 
+    
 }

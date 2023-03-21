@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e35d12e-d8c6-4f6e-bce3-86d72ad51209" name="Changes" comment="Second Commit...">
-      <change afterPath="$PROJECT_DIR$/src/main/java/db/Good.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/db/GoodGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/CartTableGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/CartGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/GoodGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/GoodGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,12 +45,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
