@@ -1,4 +1,8 @@
-package db;
+package db.gateways;
+
+import db.Good;
+import db.orm.ORM;
+import lombok.NonNull;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,8 +17,9 @@ public class CartGateway {
     public static int addGood(int goodId) throws SQLException {
         return addGood(goodId, 1);
     }
+
     public static int addGood(int goodId, int goodCount) throws SQLException {
-        var valuesMap = new HashMap<String,String>(2);
+        var valuesMap = new HashMap<String, String>(2);
         valuesMap.put("good_id", String.valueOf(goodId));
         ResultSet rs = ORM.getInstance().select(TABLE_NAME, new String[]{"count"}, "WHERE good_id = " + goodId);
         if (rs.next()) {
@@ -22,21 +27,24 @@ public class CartGateway {
         }
         if (goodCount > 1) {
             valuesMap.put("count", String.valueOf(goodCount));
-            System.out.println("count = " + valuesMap.get("count"));
             return ORM.getInstance().update(TABLE_NAME, valuesMap, "WHERE good_id = " + goodId);
         }
         return ORM.getInstance().insert(TABLE_NAME, valuesMap);
     }
 
-    public static Good[] getAllGoods() throws SQLException {
-//        var goodIds = ORM.getInstance().select(TABLE_NAME, new String[]{"good_id"},"");
-        var tabFields = new HashMap<String, String[]>();
-        var goodIds = ORM.getInstance().join();
+    public static @NonNull Good[] getAllGoods() throws SQLException {
+        var goodIds = ORM.getInstance().select(TABLE_NAME, new String[]{"good_id"}, "");
         List<Good> goods = new ArrayList<>();
-        while (goodIds.next()) {
+        while (!goodIds.isClosed() && goodIds.next()) {
             goods.add(GoodGateway.findById(goodIds.getInt("good_id")));
         }
-
+        return goods.toArray(new Good[0]);
     }
 
+
+    public static int getGoodCountById(int goodId) throws SQLException {
+        var rs = ORM.getInstance().select(TABLE_NAME, new String[]{"count"}, "WHERE good_id=" + goodId);
+        rs.next();
+        return rs.getInt("count");
+    }
 }

@@ -1,6 +1,6 @@
 package db.fromlesson;
 
-import db.Config;
+import db.orm.Config;
 
 import java.sql.*;
 
