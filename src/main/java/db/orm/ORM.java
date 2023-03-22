@@ -71,6 +71,7 @@ public class ORM {
         } else {
             return 0;
         }
+        System.out.println("ORM.update sql = " + sql);
         return statement.executeUpdate(sql);
     }
 

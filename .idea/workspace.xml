@@ -7,15 +7,14 @@
     <list default="true" id="5e35d12e-d8c6-4f6e-bce3-86d72ad51209" name="Changes" comment="Second Commit...">
       <change afterPath="$PROJECT_DIR$/src/main/java/db/Cart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/CartGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/gateways/CartGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/orm/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/Good.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/Good.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/GoodGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/gateways/GoodGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/ORM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/orm/ORM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/fromlesson/MainOld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/fromlesson/MainOld.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/fromlesson/ORMOLD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/fromlesson/ORMOLD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/gateways/CartGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/gateways/CartGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/orm/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/orm/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/orm/ORM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/orm/ORM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/shop(1).sql.gz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/shop.sql.gz" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/shop.sql.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/urok16.sql.gz" beforeDir="false" />

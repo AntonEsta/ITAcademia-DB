@@ -21,15 +21,14 @@ public class CartGateway {
     public static int addGood(int goodId, int goodCount) throws SQLException {
         var valuesMap = new HashMap<String, String>(2);
         valuesMap.put("good_id", String.valueOf(goodId));
-        ResultSet rs = ORM.getInstance().select(TABLE_NAME, new String[]{"count"}, "WHERE good_id = " + goodId);
-        if (rs.next()) {
-            goodCount += rs.getInt("count");
+        valuesMap.put("count", "count+" + goodCount);
+        int resCount = ORM.getInstance().update(TABLE_NAME, valuesMap, "WHERE good_id = " + goodId);
+        if (resCount == 0) {
+            valuesMap.remove("count");
+            return ORM.getInstance().insert(TABLE_NAME, valuesMap);
+        } else {
+            return resCount;
         }
-        if (goodCount > 1) {
-            valuesMap.put("count", String.valueOf(goodCount));
-            return ORM.getInstance().update(TABLE_NAME, valuesMap, "WHERE good_id = " + goodId);
-        }
-        return ORM.getInstance().insert(TABLE_NAME, valuesMap);
     }
 
     public static @NonNull Good[] getAllGoods() throws SQLException {
