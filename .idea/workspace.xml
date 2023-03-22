@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e35d12e-d8c6-4f6e-bce3-86d72ad51209" name="Changes" comment="Edit CartGateway.addGood">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/configs/db.xml" afterDir="false" />
+    <list default="true" id="5e35d12e-d8c6-4f6e-bce3-86d72ad51209" name="Changes" comment="End commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/db/orm/Properties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/orm/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/orm/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/orm/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/orm/Configurator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/orm/ORM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/orm/ORM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configs/db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configs/db.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>

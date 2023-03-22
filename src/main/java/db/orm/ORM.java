@@ -13,9 +13,9 @@ public class ORM {
 
     private ORM() throws SQLException {
         if (connection == null) {
-            String url = "jdbc:mysql://" + Config.SERVER + "/" + Config.DB;
+            String url = "jdbc:mysql://" + Configurator.SERVER + "/" + Configurator.DB;
             DriverManager.setLoginTimeout(10);
-            connection = DriverManager.getConnection(url, Config.LOGIN, Config.PASSWORD);
+            connection = DriverManager.getConnection(url, Configurator.LOGIN, Configurator.PASSWORD);
             statement = connection.createStatement();
         }
     }
