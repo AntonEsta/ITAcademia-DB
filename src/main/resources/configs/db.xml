@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configs>
+    <config version="main">
+        <server>
+            <address>localhost</address>
+            <port>3306</port>
+            <login>root</login>
+            <password>root</password>
+        </server>
+        <db>
+            <name>lesson14</name>
+        </db>
+        <connection>
+            <timeout>10</timeout>
+        </connection>
+    </config>
+    <config version="docker">
+        <server>
+            <address>localhost</address>
+            <port>3306</port>
+            <login>root</login>
+            <password>root</password>
+        </server>
+        <db>
+            <name>lesson14</name>
+        </db>
+        <connection>
+            <timeout>10</timeout>
+        </connection>
+    </config>
+</configs>
