@@ -1,7 +1,10 @@
 package db.orm;
 
+import com.mysql.cj.jdbc.exceptions.CommunicationsException;
 import lombok.NonNull;
 
+import javax.xml.xpath.XPathExpressionException;
+import java.io.IOException;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,10 +16,15 @@ public class ORM {
 
     private ORM() throws SQLException {
         if (connection == null) {
-            String url = "jdbc:mysql://" + Configurator.SERVER + "/" + Configurator.DB;
-            DriverManager.setLoginTimeout(10);
-            connection = DriverManager.getConnection(url, Configurator.LOGIN, Configurator.PASSWORD);
-            statement = connection.createStatement();
+            Properties databaseProperties = PropertiesFactory.createProperties("src/main/resources/configs/db-docker.xml");
+            String url = "jdbc:mysql://" + databaseProperties.getProperty("server") + "/" + databaseProperties.getProperty("db");
+            try {
+                DriverManager.setLoginTimeout(Integer.parseInt(databaseProperties.getProperty("connection_timeout")));
+                connection = DriverManager.getConnection(url, databaseProperties.getProperty("login"), databaseProperties.getProperty("password"));
+                statement = connection.createStatement();
+            } catch (CommunicationsException e) {
+                System.out.println("No connect to BD. " + e.getMessage());
+            }
         }
     }
 
@@ -37,7 +45,6 @@ public class ORM {
             }
         }
         return connection.createStatement().executeQuery("SELECT " + selectFields + " FROM " + table + " " + where);
-//        return statement.executeQuery("SELECT " + selectFields + " FROM " + table + " " + where);
     }
     
     public int insert(@NonNull String table, @NonNull HashMap<String, String> values) throws SQLException {
@@ -58,7 +65,6 @@ public class ORM {
 
     public int update(@NonNull String table, @NonNull HashMap<String,String> values, @NonNull String where) throws SQLException {
         String sql = "UPDATE " + table + " SET ";
-//        TABLE SET f=v,f2=v WHERE ... = ...";
         if (!values.isEmpty()) {
             int i = 1;
             for (Map.Entry<String, String> entry : values.entrySet()) {
@@ -71,7 +77,6 @@ public class ORM {
         } else {
             return 0;
         }
-        System.out.println("ORM.update sql = " + sql);
         return statement.executeUpdate(sql);
     }
 

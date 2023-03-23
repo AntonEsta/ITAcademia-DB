@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e35d12e-d8c6-4f6e-bce3-86d72ad51209" name="Changes" comment="End commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/db/orm/Properties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="5e35d12e-d8c6-4f6e-bce3-86d72ad51209" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/src/main/java/db/orm/PropertiesFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/orm/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/orm/Configurator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/gateways/CartGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/gateways/CartGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/orm/ORM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/orm/ORM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/configs/db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configs/db.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/orm/Properties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/orm/Properties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configs/db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configs/db-docker.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -59,7 +59,11 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="db.orm" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/db" />
       <recent name="$PROJECT_DIR$/src/main/resources/configs" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
@@ -131,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679464276817</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=".">
+      <created>1679507474292</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679507474292</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,9 +169,14 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="." />
     <MESSAGE value="Second Commit..." />
     <MESSAGE value="Edit CartGateway.addGood" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit CartGateway.addGood" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DBORM$Main.ic" NAME="Main Coverage Results" MODIFIED="1679595918846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>db.gateways.*</FILTER>
+    </SUITE>
   </component>
 </project>
